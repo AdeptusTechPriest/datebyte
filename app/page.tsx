@@ -105,7 +105,7 @@ export default function EnchantingDateProposalApp() {
           <DialogContent className="bg-pink-50 border-2 border-pink-300">
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-pink-600">
-                There is no &quot;NOOOOOO&quot;
+                The illusion of &quot;free&quot; choice.
               </DialogTitle>
               <DialogDescription className="text-lg text-pink-500">
                 You must come with me!
