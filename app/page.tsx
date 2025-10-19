@@ -115,7 +115,7 @@ export default function EnchantingDateProposalApp() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              src="https://media1.tenor.com/m/2XJN2YEYbIAAAAAd/peach-and.gif"
+              src="https://media1.tenor.com/m/_KYN7H6-42kAAAAC/celebrando-celebraci%C3%B3n.gif"
               alt="Excited bear gif"
               className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-lg"
             />{" "}
