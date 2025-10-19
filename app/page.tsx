@@ -115,7 +115,7 @@ export default function EnchantingDateProposalApp() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              src="https://media1.tenor.com/m/_KYN7H6-42kAAAAC/celebrando-celebraci%C3%B3n.gif"
+              src="https://media.tenor.com/hFMqQRX92FMAAAAi/hug-cute.gif"
               alt="Excited bear gif"
               className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-lg"
             />{" "}
@@ -136,13 +136,13 @@ export default function EnchantingDateProposalApp() {
     // Step 1: Date and Time Selection
     <motion.div key="step1" className="text-center" {...fadeInUp}>
       <h2 className="text-3xl font-bold mb-6 text-pink-600">
-        YEYYYYYYYY, WHEN SHALL WE GO?
+        Yayyy, when shall we go???
       </h2>
       <motion.img
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        src="https://media.tenor.com/WiQQRwR2QFAAAAAi/cute-panda.gif"
+        src="https://media1.tenor.com/m/_KYN7H6-42kAAAAC/celebrando-celebraci%C3%B3n.gif"
         alt="Excited bear gif"
         className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-lg"
       />
