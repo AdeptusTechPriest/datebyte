@@ -186,11 +186,11 @@ export default function EnchantingDateProposalApp() {
       </h2>
       <div className="grid grid-cols-2 gap-6 mb-6">
         {[
-          { name: "Lasagna", icon: <Utensils /> },
-          { name: "Chicken Pie", icon: <Utensils /> },
-          { name: "Chicken Shawarma", icon: <Utensils /> },
-          { name: "Snack Platter", icon: <Coffee /> },
-          { name: "Mix rice", icon: <Utensils /> },
+          { name: "Vietnamese", icon: <Utensils /> },
+          { name: "Chinese", icon: <Utensils /> },
+          { name: "Italian", icon: <Utensils /> },
+          { name: "Japanese", icon: <Utensils /> },
+          { name: "Other", icon: <Utensils /> },
         ].map(({ name, icon }) => (
           <motion.button
             key={name}
@@ -225,18 +225,15 @@ export default function EnchantingDateProposalApp() {
     // Step 3: Movie Selection
     <motion.div key="step3" className="text-center" {...fadeInUp}>
       <h2 className="text-3xl font-bold mb-6 text-pink-600">
-        What shall we watch together?
+        What shall we do together?
       </h2>
       <div className="grid grid-cols-2 gap-6 mb-6">
         {[
-          "The Notebook",
-          "La La Land",
-          "Titanic",
-          "Pride and Prejudice",
-          "Anyone But You",
-          "Past Lives",
-          "Love at First Sight",
-          "Through My Window 3",
+          "Walk around the city",
+          "Golf",
+          "Movie",
+          "Museum",
+          "Maybe golf",
           "Something else",
         ].map((movie) => (
           <motion.button
@@ -247,7 +244,7 @@ export default function EnchantingDateProposalApp() {
             onClick={() => {
               if (movie === "Something else") {
                 const customMovie = prompt(
-                  "What movie would you like to watch?"
+                  "What would you like to do?"
                 );
                 if (customMovie) handleAnswer("movie", customMovie);
               } else {
@@ -313,7 +310,7 @@ export default function EnchantingDateProposalApp() {
     // Step 5: Final Message
     <motion.div key="step5" className="text-center" {...fadeInUp}>
       <h2 className="text-4xl font-bold mb-6 text-pink-600">
-        It&apos;s a date, my love!
+        It&apos;s a date, my dear!
       </h2>
       <p className="text-xl mb-2 text-pink-500">
         I can&apos;t wait to see you on:
@@ -343,7 +340,7 @@ export default function EnchantingDateProposalApp() {
         className="mt-6 text-lg text-pink-500"
       >
         <p>We&apos;ll enjoy some delicious {answers.food.join(", ")}.</p>
-        <p>Then we&apos;ll watch &quot;{answers.movie}&quot; together.</p>
+        <p>Then we&apos;ll do &quot;{answers.movie}&quot; together.</p>
         <p className="mt-4 font-bold">
           Your excitement level: {answers.excitement}/100
         </p>
