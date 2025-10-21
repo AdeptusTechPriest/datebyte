@@ -190,11 +190,8 @@ export default function EnchantingDateProposalApp() {
           { name: "Chinese", icon: <Utensils /> },
           { name: "Italian", icon: <Utensils /> },
           { name: "Japanese", icon: <Utensils /> },
-<<<<<<< HEAD
-          { name: "Other", icon: <Coffee /> },
-=======
           { name: "Other", icon: <Utensils /> },
->>>>>>> 5dea92b6533558c3f567ba694aa08edddad8e953
+          { name: "Other", icon: <Utensils /> },
         ].map(({ name, icon }) => (
           <motion.button
             key={name}
@@ -233,22 +230,13 @@ export default function EnchantingDateProposalApp() {
       </h2>
       <div className="grid grid-cols-2 gap-6 mb-6">
         {[
-<<<<<<< HEAD
           "Golf",
           "Citywalk",
           "Museum",
           "Rave",
           "Movie",
           "Drinks",
-          "Perchance golf",
           "Hiking",
-=======
-          "Walk around the city",
-          "Golf",
-          "Movie",
-          "Museum",
-          "Maybe golf",
->>>>>>> 5dea92b6533558c3f567ba694aa08edddad8e953
           "Something else",
         ].map((movie) => (
           <motion.button
