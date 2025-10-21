@@ -105,7 +105,7 @@ export default function EnchantingDateProposalApp() {
           <DialogContent className="bg-pink-50 border-2 border-pink-300">
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-pink-600">
-                There is no &quot;NOOOOOO&quot;
+                The illusion of &quot;free&quot; choice.
               </DialogTitle>
               <DialogDescription className="text-lg text-pink-500">
                 You must come with me!
@@ -115,7 +115,7 @@ export default function EnchantingDateProposalApp() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              src="https://media1.tenor.com/m/2XJN2YEYbIAAAAAd/peach-and.gif"
+              src="https://media.tenor.com/hFMqQRX92FMAAAAi/hug-cute.gif"
               alt="Excited bear gif"
               className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-lg"
             />{" "}
@@ -136,13 +136,13 @@ export default function EnchantingDateProposalApp() {
     // Step 1: Date and Time Selection
     <motion.div key="step1" className="text-center" {...fadeInUp}>
       <h2 className="text-3xl font-bold mb-6 text-pink-600">
-        YEYYYYYYYY, WHEN SHALL WE GO?
+        Yayyy, when shall we go???
       </h2>
       <motion.img
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        src="https://media.tenor.com/WiQQRwR2QFAAAAAi/cute-panda.gif"
+        src="https://media1.tenor.com/m/_KYN7H6-42kAAAAC/celebrando-celebraci%C3%B3n.gif"
         alt="Excited bear gif"
         className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-lg"
       />
@@ -190,7 +190,11 @@ export default function EnchantingDateProposalApp() {
           { name: "Chinese", icon: <Utensils /> },
           { name: "Italian", icon: <Utensils /> },
           { name: "Japanese", icon: <Utensils /> },
+<<<<<<< HEAD
           { name: "Other", icon: <Coffee /> },
+=======
+          { name: "Other", icon: <Utensils /> },
+>>>>>>> 5dea92b6533558c3f567ba694aa08edddad8e953
         ].map(({ name, icon }) => (
           <motion.button
             key={name}
@@ -229,6 +233,7 @@ export default function EnchantingDateProposalApp() {
       </h2>
       <div className="grid grid-cols-2 gap-6 mb-6">
         {[
+<<<<<<< HEAD
           "Golf",
           "Citywalk",
           "Museum",
@@ -237,6 +242,13 @@ export default function EnchantingDateProposalApp() {
           "Drinks",
           "Perchance golf",
           "Hiking",
+=======
+          "Walk around the city",
+          "Golf",
+          "Movie",
+          "Museum",
+          "Maybe golf",
+>>>>>>> 5dea92b6533558c3f567ba694aa08edddad8e953
           "Something else",
         ].map((movie) => (
           <motion.button
@@ -343,7 +355,7 @@ export default function EnchantingDateProposalApp() {
         className="mt-6 text-lg text-pink-500"
       >
         <p>We&apos;ll enjoy some delicious {answers.food.join(", ")}.</p>
-        <p>Then we&apos;ll watch &quot;{answers.movie}&quot; together.</p>
+        <p>Then we&apos;ll do &quot;{answers.movie}&quot; together.</p>
         <p className="mt-4 font-bold">
           Your excitement level: {answers.excitement}/100
         </p>

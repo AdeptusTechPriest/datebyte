@@ -1,50 +1,52 @@
-import { NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+// /app/api/send-response/route.ts
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
-  secure: true,  // Use SSL
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_APP_PASSWORD
-  }
-})
+import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
-  if (!process.env.EMAIL_USER || !process.env.EMAIL_APP_PASSWORD) {
-    console.error('Missing email credentials');
-    return NextResponse.json({ success: false, error: 'Missing email configuration' }, { status: 500 });
+  const emailUser = process.env.EMAIL_USER;
+  const emailPass = process.env.EMAIL_APP_PASSWORD;
+
+  if (!emailUser || !emailPass) {
+    console.error('❌ Missing EMAIL_USER or EMAIL_APP_PASSWORD');
+    return NextResponse.json({ success: false, error: 'Missing email credentials' }, { status: 500 });
   }
 
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: { user: emailUser, pass: emailPass },
+  });
+
   try {
-    const data = await request.json()
-    
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+    const data = await request.json();
+    const info = await transporter.sendMail({
+      from: emailUser,
+      to: emailUser,
       subject: '💕 New Date Response!',
       html: `
         <h1>She responded!</h1>
-        <p>Date: ${new Date(data.date).toLocaleDateString()}</p>
-        <p>Time: ${data.time}</p>
-        <p>Food: ${data.food.join(', ')}</p>
-        <p>Movie: ${data.movie}</p>
-        <p>Excitement: ${data.excitement}/100</p>
+        <p><b>Date:</b> ${new Date(data.date).toLocaleDateString()}</p>
+        <p><b>Time:</b> ${data.time}</p>
+        <p><b>Place:</b> ${data.food?.join(', ')}</p>
+        <p><b>Excitement:</b> ${data.excitement}/100</p>
       `,
-      attachments: [{
-        filename: `date-response-${new Date().toISOString()}.json`,
-        content: JSON.stringify(data, null, 2),
-        contentType: 'application/json'
-      }]
-    })
-    
-    return NextResponse.json({ success: true })
-  } catch (error: unknown) {
-    console.error('Failed to send email:', error)
-    if (error instanceof Error) {
-      return NextResponse.json({ success: false, error: error.message }, { status: 500 })
-    }
-    return NextResponse.json({ success: false, error: 'An unknown error occurred' }, { status: 500 })
+      attachments: [
+        {
+          filename: `date-response-${new Date().toISOString()}.json`,
+          content: JSON.stringify(data, null, 2),
+          contentType: 'application/json',
+        },
+      ],
+    });
+
+    console.log('✅ Email sent:', info.messageId);
+    return NextResponse.json({ success: true });
+  } catch (error: any) {
+    console.error('❌ Failed to send email:', error);
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }
