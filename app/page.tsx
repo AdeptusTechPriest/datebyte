@@ -190,7 +190,7 @@ export default function EnchantingDateProposalApp() {
           { name: "Chinese", icon: <Utensils /> },
           { name: "Italian", icon: <Utensils /> },
           { name: "Japanese", icon: <Utensils /> },
-          { name: "Other", icon: <Utensils /> },
+          { name: "Drinks", icon: <Utensils /> },
           { name: "Other", icon: <Utensils /> },
         ].map(({ name, icon }) => (
           <motion.button
